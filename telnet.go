@@ -139,7 +139,7 @@ login:
 			return err
 		}
 
-		//fmt.Println(string(buf[0:n]))
+		fmt.Println(string(buf[0:n]))
 		if strings.HasSuffix(string(c.buf[0:n]), ">") {
 			break
 		}
@@ -163,7 +163,7 @@ login:
 	if err != nil {
 		return err
 	}
-	//fmt.Println(string(buf[0:n]))
+	fmt.Println(string(buf[0:n]))
 
 	n, err = c.Write(c.Conn, []byte(enable+"\n"))
 	if err != nil {
