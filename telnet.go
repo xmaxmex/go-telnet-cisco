@@ -143,11 +143,11 @@ login:
 		if strings.HasSuffix(string(c.buf[0:n]), ">") {
 			break
 		}
-		if strings.HasSuffix(string(c.buf[0:n]), "Username:") {
+		if strings.HasSuffix(string(c.buf[0:n]), "Username(1-64 chars):") {
 			goto login
 			break
 		}
-		if strings.HasSuffix(string(c.buf[0:n]), "Password:") {
+		if strings.HasSuffix(string(c.buf[0:n]), "Password(1-96 chars):") {
 			n, err = c.Write(c.Conn, []byte(password+"\n"))
 			if err != nil {
 				return err
