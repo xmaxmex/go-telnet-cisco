@@ -86,8 +86,8 @@ func (c *Client) Connect(address string) (err error) {
 	return err
 }
 
-func (c *Client) Login(username string, password string, enable string) error {
-login:
+func (c *Client) Login(username string, password string) error {
+login:	
 	n, err := c.Write(c.Conn, []byte("\n"))
 	if err != nil {
 		return err
@@ -165,7 +165,7 @@ login:
 	}
 	fmt.Println(string(buf[0:n]))
 
-	n, err = c.Write(c.Conn, []byte(enable+"\n"))
+	n, err = c.Write(c.Conn, []byte(password+"\n"))
 	if err != nil {
 		return err
 	}
