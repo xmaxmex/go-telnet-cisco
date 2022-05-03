@@ -9,14 +9,14 @@ import (
 func main() {
 	client := new(telnet.Client)
 
-	err := client.Connect("192.168.63.250:23")
+	err := client.Connect("192.168.10.1:23")
 
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error: %s", err.Error())
 		return
 	}
 
-	err = client.Login("YOU USERNAME","YOU PASS")
+	err = client.Login("admin","admin")
 
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error: %s", err.Error())
