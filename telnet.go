@@ -140,7 +140,7 @@ login:
 			return err
 		}
 
-		fmt.Println(string(buf[0:n]))
+		fmt.Println(string(c.buf[0:n]))
 		if strings.HasSuffix(string(c.buf[0:n]), ">") {
 			break
 		}
@@ -164,7 +164,7 @@ login:
 	if err != nil {
 		return err
 	}
-	fmt.Println(string(buf[0:n]))
+	fmt.Println(string(c.buf[0:n]))
 
 	n, err = c.Write(c.Conn, []byte(password+"\n"))
 	if err != nil {
@@ -175,7 +175,7 @@ login:
 	if err != nil {
 		return err
 	}
-	fmt.Println(string(buf[0:n]))
+	fmt.Println(string(c.buf[0:n]))
 
 	n, err = c.Write(c.Conn, []byte("terminal length 0\n"))
 	if err != nil {
@@ -186,7 +186,7 @@ login:
 	if err != nil {
 		return err
 	}
-	fmt.Println(string(buf[0:n]))
+	fmt.Println(string(c.buf[0:n]))
 	return err
 }
 
