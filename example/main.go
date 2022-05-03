@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
-	"github.com/shiyunjin/go-telnet-cisco"
+	"github.com/xmaxmex/go-telnet-cisco"
 )
 
 func main() {
@@ -16,7 +16,7 @@ func main() {
 		return
 	}
 
-	err = client.Login("YOU USERNAME","YOU PASS","YOU ENA PASS")
+	err = client.Login("YOU USERNAME","YOU PASS")
 
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error: %s", err.Error())
