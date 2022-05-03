@@ -195,6 +195,7 @@ func (c *Client) Cmd(shell string) (context string, err error) {
 	if err != nil {
 		return "", err
 	}
+	
 	//
 	//for {
 	//	n, err = conn.Read(buf[0:])
